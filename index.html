@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiBot3000 - Aspiradora Automática</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="AspiCSS.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="led-blue">Aspi</span><span class="led-white">Bot</span><span class="led-blue">3000</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showTab('home')" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#" onclick="showTab('about')"><i class="fas fa-info-circle"></i> Acerca</a></li>
+                    <li><a href="#" onclick="showTab('funcionamiento')"><i class="fas fa-cogs"></i> Funcionamiento</a></li>
+                    <li><a href="#" onclick="showTab('codigo')"><i class="fas fa-code"></i> Código</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="home" class="tab-content active">
+            <h2>Bienvenido a AspiBot3000</h2>
+            <p>La aspiradora automática inteligente construida con Arduino</p>
+            <div class="robot-image">
+                <img src="imagenes_AspiBot3000/1000109043.png" alt="Aspiradora automática">
+            </div>
+        </div>
+
+        <!-- Pestaña Acerca de -->
+        <div id="about" class="tab-content">
+            <h2>Acerca del Proyecto</h2>
+            <p>AspiBot3000 es un proyecto desarrollado para demostrar las capacidades de automatización con Arduino.</p>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Autonomía</h3>
+                    <p>Funciona completamente de forma autónoma</p>
+                    <!-- Agrega esto dentro del div#about -->
+<div class="team-section">
+    <h3><i class="fas fa-users"></i> Equipo de Desarrollo</h3>
+    <div class="team-members">
+        <div class="member-card">
+            <div class="member-info">
+                <h4>Daniel Alejandro Pelayo Díaz</h4>
+                <p><i class="fas fa-phone"></i> 3328167490</p>
+                <p><i class="fas fa-envelope"></i> daniel.pelayo6090@alumnos.udg.mx</p>
+            </div>
+        </div>
+        <div class="member-card">
+            <div class="member-info">
+                <h4>Edgar Vicente Malta Silva</h4>
+                <p><i class="fas fa-phone"></i> 3327410563</p>
+                <p><i class="fas fa-envelope"></i> edgar.malta6113@alumnos.udg.mx</p>
+            </div>
+        </div>
+        <div class="member-card">
+            <div class="member-info">
+                <h4>Sebastián Alejandro Cervantes Muñoz</h4>
+                <p><i class="fas fa-phone"></i> 3327386327</p>
+                <p><i class="fas fa-envelope"></i> sebastian.cervantes6175@alumnos.udg.mx</p>
+            </div>
+        </div>
+        <div class="member-card">
+            <div class="member-info">
+                <h4>Braulio Gabriel Macías Cortes</h4>
+                <p><i class="fas fa-phone"></i> 3348668861</p>
+                <p><i class="fas fa-envelope"></i> braulio.macias6159@alumnos.udg.mx</p>
+            </div>
+        </div>
+        <div class="member-card">
+            <div class="member-info">
+                <h4>Edwin Fernando Salcedo Bonoso</h4>
+                <p><i class="fas fa-phone"></i> 3317708174</p>
+                <p><i class="fas fa-envelope"></i> edwin.salcedo6145@alumnos.udg.mx</p>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-broom"></i>
+                    <h3>Limpieza</h3>
+                    <p>Eficiente sistema de aspiración</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Tecnología</h3>
+                    <p>Basado en Arduino y sensores ultrasónicos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestaña Funcionamiento -->
+        <div id="funcionamiento" class="tab-content">
+            <h2>¿Cómo funciona?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Detección de Obstáculos</h3>
+                    <p>Usa 3 sensores ultrasónicos para navegar sin chocar</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Evita Precipicios</h3>
+                    <p>Sensor infrarrojo detecta bordes y escaleras</p>
+          8      </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Control Inteligente</h3>
+                    <p>Algoritmo decide la mejor ruta de limpieza</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestaña Código -->
+        <div id="codigo" class="tab-content">
+            <div class="code-header">
+                <h2><i class="fas fa-code"></i> Código Arduino</h2>
+                <button id="copy-button" class="btn"><i class="fas fa-copy"></i> Copiar Código</button>
+            </div>
+            
+            <div class="components-box">
+                <h3><i class="fas fa-microchip"></i> Componentes Requeridos</h3>
+                <ul class="components-list">
+                    <li><i class="fas fa-microcontroller"></i> Arduino Uno/Mega</li>
+                    <li><i class="fas fa-bolt"></i> Driver L298N</li>
+                    <li><i class="fas fa-sensor"></i> 3x HC-SR04 (Ultrasónico)</li>
+                    <li><i class="fas fa-light-emergency-on"></i> Sensor IR</li>
+                    <li><i class="fas fa-toggle-on"></i> 2x Interruptores</li>
+                    <li><i class="fas fa-motor"></i> 2x Motores DC</li>
+                </ul>
+            </div>
+
+            <div class="code-explanation">
+                <div class="explanation-block">
+                    <h4><i class="fas fa-cog"></i> Configuración Inicial</h4>
+                    <p>Define pines para motores (IN1-IN4, ENA/ENB) y sensores (Trig/Echo).</p>
+                </div>
+                
+                <div class="explanation-block">
+                    <h4><i class="fas fa-robot"></i> Lógica Principal</h4>
+                    <p>Usa 3 sensores ultrasónicos para navegación:</p>
+                    <ul class="explanation-list">
+         8               <li>Detectar obstáculos (15cm de rango)</li>
+                        <li>Decidir movimientos (avanzar/girar/retroceder)</li>
+                        <li>Evitar colisiones laterales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <pre class="arduino-code"><code>// definiciones Driver Motores.
+#define IN1 9
+#define IN2 10
+#define IN3 11
+#define IN4 12
+#define ENA 5
+#define ENB 6
+
+int VELOCIDAD = 125;       // velocidad de motores (0 a 255).
+int VELOCIDADREV = 250;     // velocidad de motores en reversa (0 a 255).
+const int MOTORESOFF = 0;    // motores apagados.
+
+// definiciones sensores.
+#define trigPin1 2
+#define echoPin1 3
+#define trigPin2 16
+#define echoPin2 17
+#define trigPin3 14
+#define echoPin3 15
+#define irpin 8
+#define pinpuntomuertoR 4
+#define pinpuntomuertoL 7
+
+// definiciones sistema de movimiento.
+long duration1;
+long duration2;
+long duration3;
+int distanceleft;
+int distancefront;
+int distanceright; 
+
+int a=0;8
+
+void setup() {
+  pinMode(pinpuntomuertoR, INPUT_PULLUP);
+  pinMode(pinpuntomuertoL, INPUT_PULLUP);
+  pinMode(trigPin1, OUTPUT); 
+  pinMode(trigPin2, OUTPUT);
+  pinMode(trigPin3, OUTPUT);   
+  pinMode(echoPin1, INPUT);    
+  pinMode(echoPin2, INPUT);
+  pinMode(echoPin3, INPUT);
+  pinMode(irpin, INPUT);
+  pinMode(9, OUTPUT);      
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(14, OUTPUT);
+  pinMode(15, INPUT);
+  pinMode(16, OUTPUT);
+  pinMode(17, INPUT);
+
+  Serial.begin(9600);
+  delay(2000);
+}
+
+void loop() {
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin1, LOW);
+  duration1 = pulseIn(echoPin1, HIGH);
+  distanceleft = duration1 * 0.034 / 2;
+  Serial.print("Distance1: ");
+  Serial.println(distanceleft);
+  digitalWrite(trigPin2, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin2, HIGH);
+  delayMicroseconds(10);8
+  digitalWrite(trigPin2, LOW);
+  duration2 = pulseIn(echoPin2, HIGH);
+  distancefront = duration2 * 0.034 / 2;
+  Serial.print("Distance2: ");
+  Serial.println(distancefront);
+  digitalWrite(trigPin3, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin3, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin3, LOW);
+  duration3 = pulseIn(echoPin3, HIGH);
+  distanceright = duration3 * 0.034 / 2;
+  Serial.print("Distance3: ");
+  Serial.println(distanceright);
+  int IR = digitalRead(irpin);
+  int estadoPmR = digitalRead(pinpuntomuertoR);  
+  int estadoPmL = digitalRead(pinpuntomuertoL);
+  
+  // SISTEMA DE DETECCION DE VACIO
+  if(IR==HIGH) { 
+    analogWrite(ENA, MOTORESOFF);
+    analogWrite(ENB, MOTORESOFF);
+    delay(150);
+    analogWrite(ENA, VELOCIDADREV);
+    analogWrite(ENB, VELOCIDADREV);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    delay(1000);
+    a=1;
+  }
+
+  // SISTEMA DE DETECCION DE PUNTOS MUERTOS
+  if (estadoPmR == LOW) {
+    Serial.println(" Sistema de deteccion de punto muerto iniciado. ");
+    analogWrite(ENA, VELOCIDAD);   
+    analogWrite(ENB, VELOCIDAD);8
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    delay(400);
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH); 
+    delay(800);
+    a=1;
+  }
+  
+  if (estadoPmL == LOW) {
+    Serial.println(" Sistema de deteccion de punto muerto iniciado. ");
+    analogWrite(ENA, VELOCIDAD);   
+    analogWrite(ENB, VELOCIDAD);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    delay(400);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
+    delay(800);
+    a=1;
+  }
+
+  // SISTEMA PRINCIPAL DE NAVEGACION
+  if ((a==0)&&(IR==LOW)&&(distanceleft <= 15 && distancefront > 15 && distanceright <= 15) || 
+      (a==0)&&(IR==LOW)&&(distanceleft > 15 && distancefront > 15 && distanceright > 15)) {
+    analogWrite(ENA, VELOCIDAD);
+    analogWrite(ENB, VELOCIDAD);
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4,LOW);
+  }
+  
+  if ((a==1)&&(IR==LOW)||(IR==LOW)&&(distanceleft <= 15 && distancefront <= 15 && distanceright > 15)||
+      (IR==LOW)&&(distanceleft <= 15 && distancefront > 15 && distanceright > 15)) {
+    analogWrite(ENA, VELOCIDAD);
+    analogWrite(ENB, VELOCIDAD);
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    delay(100);
+    a=0;
+  }
+  
+  if ((IR==LOW)&&(distanceleft > 15 && distancefront <= 15 && distanceright <= 15) ||
+      (IR==LOW)&&(distanceleft > 15 && distancefront > 15 && distanceright <= 15) ||
+      (IR==LOW)&&(distanceleft > 15 && distancefront <= 15 && distanceright > 15)) {
+    analogWrite(ENA, VELOCIDAD);
+    analogWrite(ENB, VELOCIDAD);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
+  }
+}</code></pre>
+        </div>
+    </div>
+
+    <script src="AspiJav.js"></script>
+</body>
+</html>
